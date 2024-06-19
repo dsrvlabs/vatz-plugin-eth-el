@@ -31,6 +31,8 @@ func main() {
 	flag.IntVar(&port, "port", defaultPort, "port number")
 	flag.StringVar(&rpcAddr, "rpcAddr", defaultRpcAddr, "rpc address")
 
+	flag.Parse()
+
 	p := sdk.NewPlugin(pluginName)
 	p.Register(pluginFeature)
 
