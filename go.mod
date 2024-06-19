@@ -1,6 +1,8 @@
 module github.com/dsrvlabs/vatz-plugin-geth
 
-go 1.22.0
+go 1.21
+
+toolchain go1.22.0
 
 require (
 	github.com/dsrvlabs/vatz-proto v0.0.0-20220420191920-c7decada518f
