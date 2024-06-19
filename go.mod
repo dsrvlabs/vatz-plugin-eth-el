@@ -1,4 +1,4 @@
-module github.com/dsrvlabs/vatz-plugin-geth
+module github.com/dsrvlabs/vatz-plugin-eth-el
 
 go 1.21
 
