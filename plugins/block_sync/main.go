@@ -94,10 +94,12 @@ func pluginFeature(info, opt map[string]*structpb.Value) (sdk.CallResponse, erro
 	if len(syncHistory) < minimumSamples {
 		return sdk.CallResponse{
 			FuncName: "pluginFeature",
-			Message:  "",
+			Message:  "calculating...",
 			Severity: pluginpb.SEVERITY_CRITICAL,
 			State:    pluginpb.STATE_PENDING,
 		}, nil
+	} else {
+		syncHistory = syncHistory[len(syncHistory)-10:]
 	}
 
 	timeDiff := syncHistory[len(syncHistory)-1].Time.Sub(syncHistory[0].Time)
@@ -121,8 +123,8 @@ func pluginFeature(info, opt map[string]*structpb.Value) (sdk.CallResponse, erro
 
 	return sdk.CallResponse{
 		FuncName: "pluginFeature",
-		Message:  "ok",
-		Severity: pluginpb.SEVERITY_CRITICAL,
+		Message:  "syncing",
+		Severity: pluginpb.SEVERITY_INFO,
 		State:    pluginpb.STATE_SUCCESS,
 	}, nil
 }

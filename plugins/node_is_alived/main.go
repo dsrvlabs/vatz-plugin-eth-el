@@ -71,7 +71,7 @@ func pluginFeature(info, opt map[string]*structpb.Value) (sdk.CallResponse, erro
 	return sdk.CallResponse{
 		FuncName: "pluginFeature",
 		Message:  "",
-		Severity: pluginpb.SEVERITY_CRITICAL,
+		Severity: pluginpb.SEVERITY_INFO,
 		State:    pluginpb.STATE_SUCCESS,
 	}, nil
 }
