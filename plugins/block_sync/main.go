@@ -44,6 +44,8 @@ func main() {
 	flag.StringVar(&rpcAddr, "rpcAddr", defaultRpcAddr, "rpc address")
 	flag.IntVar(&blockIntervalSecond, "blocktime", defaultBlockIntervalSecond, "block time in second")
 
+	flag.Parse()
+
 	log.Info().Str("module", pluginName).Msgf("addr %s", addr)
 	log.Info().Str("module", pluginName).Msgf("port %d", port)
 	log.Info().Str("module", pluginName).Msgf("rpcAddr %s", rpcAddr)
